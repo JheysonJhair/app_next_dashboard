@@ -158,7 +158,7 @@ export default function FormCreateCustomer(props: FormCreateCustomerProps) {
                 <FormItem>
                   <FormLabel>Cif</FormLabel>
                   <FormControl>
-                    <Input placeholder="B-123221 " type="number" {...field} />
+                    <Input placeholder="B-123221 " type="text" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
