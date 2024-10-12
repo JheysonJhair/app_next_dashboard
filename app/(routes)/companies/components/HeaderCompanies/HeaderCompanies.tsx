@@ -25,7 +25,7 @@ export default function HeaderCompanies() {
             <DialogTitle>Create custormer</DialogTitle>
             <DialogDescription>Create a confirgure customer</DialogDescription>
           </DialogHeader>
-          <FormCreateCustomer/>
+          <FormCreateCustomer setOpenModalCreate={setopenModalCreate}/>
         </DialogContent>
       </Dialog>
     </div>

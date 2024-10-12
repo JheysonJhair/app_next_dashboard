@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 
 import { z } from "zod";
 
+import axios from "axios";
+
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -27,6 +29,7 @@ import {
 } from "@/components/ui/select";
 import { UploadButton } from "@/utils/uploadthing";
 import { toast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string(),
@@ -39,6 +42,7 @@ const formSchema = z.object({
 
 export default function FormCreateCustomer(props: FormCreateCustomerProps) {
   const { setOpenModalCreate } = props;
+  const router = useRouter();
   const [photoUploaded, setphotoUploaded] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -55,7 +59,19 @@ export default function FormCreateCustomer(props: FormCreateCustomerProps) {
   const { isValid } = form.formState;
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
+    try {
+      axios.post("/api/company", values);
+      toast({
+        title: "Compny creatre",
+      });
+      router.refresh();
+      setOpenModalCreate(false);
+    } catch (err) {
+      toast({
+        title: "Something went wrong",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -166,13 +182,13 @@ export default function FormCreateCustomer(props: FormCreateCustomerProps) {
                           form.setValue("profileImage", res?.[0].url);
                           toast({
                             title: "Photo uploaded successfully",
-                          })
+                          });
                           setphotoUploaded(true);
                         }}
                         onUploadError={(error: Error) => {
                           toast({
                             title: "Error uploading profile image",
-                          })
+                          });
                         }}
                       />
                     )}
@@ -182,7 +198,9 @@ export default function FormCreateCustomer(props: FormCreateCustomerProps) {
               )}
             />
           </div>
-          <Button type="submit" disabled={!isValid}>Submit</Button>
+          <Button type="submit" disabled={!isValid}>
+            Submit
+          </Button>
         </form>
       </Form>
     </div>

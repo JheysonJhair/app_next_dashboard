@@ -17,7 +17,7 @@ model Company {
   cif          String  @db.Text
   phone        String  @db.Text
   country      String  @db.Text
-  wbsite       String  @db.Text
+  website       String  @db.Text
 
   contacts Contact[]
 
