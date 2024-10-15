@@ -22,7 +22,7 @@ export const dataGeneralSideebar = [
   {
     icon: Calendar,
     label: "Calendar",
-    href: "/task",
+    href: "/tasks",
   },
 ];
 
@@ -31,11 +31,6 @@ export const dataToolsSidebar = [
     icon: CircleHelpIcon,
     label: "Faqs",
     href: "/faqs",
-  },
-  {
-    icon: Calendar,
-    label: "Calendar",
-    href: "/task",
   },
   {
     icon: BarChart4,

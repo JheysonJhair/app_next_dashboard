@@ -10,7 +10,7 @@ export default function Logo() {
       onClick={() => router.push("/")}
     >
       <Image src="/logo.svg" alt="logo" width={30} height={30} priority />
-      <h1 className="font-bold text-xl">TarraManger</h1>
+      <h1 className="font-bold text-xl">JhairManager</h1>
     </div>
   );
 }
