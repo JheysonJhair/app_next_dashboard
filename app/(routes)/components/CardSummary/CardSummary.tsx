@@ -13,7 +13,7 @@ export default function CardSummary(props: CardSummaryProps) {
         <div className="flex gap-2 items-center">
           <CustomIcon icon={Icon}></CustomIcon>
           {title}
-        </div>{" "}
+        </div>
         <CustomTooltip content={tooltipText}></CustomTooltip>
       </div>
       <div className="flex gap-4 mt-2 md:mt-4">
