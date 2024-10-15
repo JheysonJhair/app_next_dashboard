@@ -2,6 +2,8 @@ import Image from "next/image";
 import { CompanyInformationProps } from "./CompanyInformation.types";
 import { User } from "lucide-react";
 import CompanyForm from "../CompanyForm/CompanyForm";
+import NewContact from "../NewContact/NewContact";
+import { ListContacts } from "../ListContacts/ListContacts";
 
 export default function CompanyInformation(props: CompanyInformationProps) {
   const { company } = props;
@@ -16,7 +18,7 @@ export default function CompanyInformation(props: CompanyInformationProps) {
             height={50}
             className="rounded-lg mb-3"
           />
-          <CompanyForm company={company}/>
+          <CompanyForm company={company} />
         </div>
       </div>
       <div className="rounded-lg bg-background shadow-md hover:shadow-lg p-4 h-min">
@@ -26,10 +28,10 @@ export default function CompanyInformation(props: CompanyInformationProps) {
             Contacts
           </div>
           <div>
-            <p>new contact</p>
+            <NewContact />
           </div>
         </div>
-        <p>List cotnect</p>
+        <ListContacts company={company} />
       </div>
     </div>
   );

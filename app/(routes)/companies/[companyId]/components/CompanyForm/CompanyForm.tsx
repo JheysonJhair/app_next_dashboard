@@ -50,7 +50,6 @@ export default function CompanyForm(props: CompanyFormProps) {
   });
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-        console.log("hola");
       await axios.patch(`/api/company/${company.id}`, values);
       toast({
         title: "Compnay updating",
