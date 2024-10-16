@@ -1,7 +1,7 @@
 import React from "react";
 import AcordionFaqs from "./components/AcordionFaqs/AcordionFaqs";
 
-export default function page() {
+export default function PageFaqs() {
   return (
     <div
       className="max-w-4xl p-6 mx-auto rounded-lg shadow-md bg-background"
